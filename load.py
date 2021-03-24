@@ -83,7 +83,7 @@ def run_slow(fn, *args, **kwargs):
     time.sleep(0.5)
 
     print("\n\n\n**** Testing exception propagation ****")
-    bad_loader = SlowLoader(line_delay=0.01, fail_on={"0_2_0"})
+    bad_loader = SlowLoader(line_delay=0.05, fail_on={"0_1"})
     try:
         res = list(fn(roots, bad_loader))
     except LoadIssuesError as e:
